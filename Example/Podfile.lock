@@ -1,16 +1,23 @@
 PODS:
-  - CS_Common_UI (0.1.0)
+  - CS_Common_UI (0.1.0):
+    - CS_Common_Utils
+  - CS_Common_Utils (0.1.3)
 
 DEPENDENCIES:
   - CS_Common_UI (from `../`)
+
+SPEC REPOS:
+  https://github.com/ChristianSlanzi/Specs.git:
+    - CS_Common_Utils
 
 EXTERNAL SOURCES:
   CS_Common_UI:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CS_Common_UI: 4233f8be3fe5eae39f5e9d5438fd22796e624313
+  CS_Common_UI: 8b43bba8542d9136c5acca3f3c7b725d18b93b26
+  CS_Common_Utils: 5f3899e57bc82361f63ed70c5180bfcb3bbe6080
 
-PODFILE CHECKSUM: 998c4e95e8385691bfc532feda6533aceec293ee
+PODFILE CHECKSUM: 30c8aa22d36fca2430f6dce4d3bf0df45da5c699
 
 COCOAPODS: 1.8.4

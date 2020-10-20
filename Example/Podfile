@@ -1,8 +1,12 @@
+source 'https://github.com/christianslanzi/Specs.git'
+
+platform :ios, '13.0'
+
 use_frameworks!
 
 target 'CS_Common_UI_Example' do
   pod 'CS_Common_UI', :path => '../'
-
+  
   target 'CS_Common_UI_Tests' do
     inherit! :search_paths
 
