@@ -1,0 +1,16 @@
+PODS:
+  - CS_Common_UI (0.1.0)
+
+DEPENDENCIES:
+  - CS_Common_UI (from `../`)
+
+EXTERNAL SOURCES:
+  CS_Common_UI:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CS_Common_UI: 4233f8be3fe5eae39f5e9d5438fd22796e624313
+
+PODFILE CHECKSUM: 998c4e95e8385691bfc532feda6533aceec293ee
+
+COCOAPODS: 1.8.4
