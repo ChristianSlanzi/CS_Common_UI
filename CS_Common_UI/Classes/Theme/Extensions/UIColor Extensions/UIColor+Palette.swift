@@ -18,9 +18,7 @@ public extension UIColor {
     ///   - theme: The theme for which to determine the color of Stranger Theme's brand.
     /// - Returns: The palette color associated with the Stranger Theme's brand.
     class func brand(for theme: Theme) -> UIColor {
-        //return Palette.mulberryRed
-        //TODO: refactor with ThemeProtocol
-        return Palette.wasabiGreen
+        return UIColor(named: theme.rawValue+"brand") ?? Palette.cannonPurple
     }
     
     // MARK: - Text
@@ -117,14 +115,7 @@ public extension UIColor {
     ///   - theme: The theme for which to determine the color of the background for standard content.
     /// - Returns: The light palette color used for the background for standard content.
     class func contentBackground(for theme: Theme) -> UIColor {
-        switch theme {
-        case .light:
-            return Palette.white
-        case .dark:
-            return Palette.black
-        default:
-            return Palette.white
-        }
+        return UIColor(named: theme.rawValue+"-"+"contentBackground") ?? (theme == .dark ? Palette.black : Palette.white)
     }
     
     /// Returns the light palette color used for the background for standard content.
