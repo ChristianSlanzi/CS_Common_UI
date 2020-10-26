@@ -12,4 +12,4 @@ language: swift
 script:
 - set -o pipefail && xcodebuild -workspace Example/CS_Common_UI.xcworkspace -scheme CS_Common_UI-Example -sdk iphonesimulator14.2 ONLY_ACTIVE_ARCH=NO | xcpretty
 #- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/CS_Common_UI.xcworkspace -scheme CS_Common_UI-Example -sdk iphonesimulator14.2 ONLY_ACTIVE_ARCH=NO | xcpretty
-- pod lib lint --allow-warnings
+- pod lib lint --sources=https://github.com/ChristianSlanzi/Specs.git --allow-warnings
