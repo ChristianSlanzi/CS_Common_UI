@@ -19,6 +19,7 @@
 		207A662605B31AC64D800B6A4B49CF16 /* InfoNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C400F05D1220BB63431E03192913F /* InfoNotification.swift */; };
 		2227E16A6C68F84A8F0BE2DFD5E4A21B /* NonEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D253AB97E1C3DA4F89B6A30A83E462 /* NonEmpty.swift */; };
 		23068350B500C9DEBBA25AF9EEBE30EF /* Contravariance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21508CF070DCAD09C269E59E93EAE2 /* Contravariance.swift */; };
+		246C81E2254983FA009AD69F /* CustomIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246C81E1254983FA009AD69F /* CustomIndicatorView.swift */; };
 		33A81AAAFBC5D4BEF6F8E1F8530AED6D /* CALayer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE1BE7991A7283CA4186073EF9EE432 /* CALayer+Ext.swift */; };
 		38B493199985464B063EB9A7DCADE200 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC1892383F6B9C0AF56395C292FC97E /* UIFont+Ext.swift */; };
 		3CA51F404D7DCF4A65F7DCC0064D0908 /* CustomNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA550F459893DB9B94D9805B9F28BB1 /* CustomNotification.swift */; };
@@ -136,6 +137,7 @@
 		1E85BBDBA4CADF80BB4121CD0A52B240 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		1F3396B95494E5C559CA28B126BCA23A /* FunctionalKeyPaths.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FunctionalKeyPaths.swift; path = CS_Common_Utils/Classes/Functional/FunctionalKeyPaths.swift; sourceTree = "<group>"; };
 		20EEDCB5623983CF07271B8AC786A688 /* UINavigationBar+ColorUpdatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+ColorUpdatable.swift"; sourceTree = "<group>"; };
+		246C81E1254983FA009AD69F /* CustomIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIndicatorView.swift; sourceTree = "<group>"; };
 		2852FC4383BA646B24349ED04D772D8B /* Pods-CS_Common_UI_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CS_Common_UI_Example-Info.plist"; sourceTree = "<group>"; };
 		2BD8843A49BA69427AC4B3688E3B6C68 /* Pods-CS_Common_UI_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CS_Common_UI_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2CD47AFE8095C481EB219349118DC024 /* Scene+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Scene+Ext.swift"; path = "CS_Common_Utils/Classes/Extensions/Scene/Scene+Ext.swift"; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 		2E9E485C59D1D35328A49180E56684EE /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				246C81E1254983FA009AD69F /* CustomIndicatorView.swift */,
 				D57595289DB597EC54997654BA6D3DB8 /* BaseViewController.swift */,
 				425F313C8151176489F1A2B2F6FC45EE /* CaptionView.swift */,
 				3E74852D532A89DDB2FCFE2AA9958659 /* CustomScrollViewController.swift */,
@@ -492,9 +495,9 @@
 			isa = PBXGroup;
 			children = (
 				5817CE0B76EBD59B7166679204D18CF5 /* Components */,
+				4E7206F4325D1C5AE0EF16270FF97F87 /* Theme */,
 				E35C83614B1530425540468809F7739E /* Pod */,
 				D77ED0D549685489AA0D112CAB68DF79 /* Support Files */,
-				4E7206F4325D1C5AE0EF16270FF97F87 /* Theme */,
 			);
 			name = CS_Common_UI;
 			path = ../..;
@@ -869,6 +872,7 @@
 				DC5EFEC1342C205DCAB83A9936B83765 /* Theme.swift in Sources */,
 				CA6D3D802A7BED9A9C8676D945ED790A /* ThemeUsageExample.swift in Sources */,
 				D3AAD267FF61FD039F63964901C0AD1E /* UIColor+Palette.swift in Sources */,
+				246C81E2254983FA009AD69F /* CustomIndicatorView.swift in Sources */,
 				5E9ADE0FE7398D9637A5742D00BC95D5 /* UILabel+ColorUpdatable.swift in Sources */,
 				B968867E60F24E5AED29898CCA9B61B1 /* UINavigationBar+ColorUpdatable.swift in Sources */,
 				4C173ADA1F2135C88D9C9525BC12E916 /* UITabBar+ColorUpdatable.swift in Sources */,
