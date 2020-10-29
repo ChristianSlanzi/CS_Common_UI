@@ -19,6 +19,7 @@
 		207A662605B31AC64D800B6A4B49CF16 /* InfoNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C400F05D1220BB63431E03192913F /* InfoNotification.swift */; };
 		2227E16A6C68F84A8F0BE2DFD5E4A21B /* NonEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D253AB97E1C3DA4F89B6A30A83E462 /* NonEmpty.swift */; };
 		23068350B500C9DEBBA25AF9EEBE30EF /* Contravariance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21508CF070DCAD09C269E59E93EAE2 /* Contravariance.swift */; };
+		244E9443254B4158008AE146 /* TappableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244E9442254B4158008AE146 /* TappableLabel.swift */; };
 		246C81E2254983FA009AD69F /* CustomIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246C81E1254983FA009AD69F /* CustomIndicatorView.swift */; };
 		33A81AAAFBC5D4BEF6F8E1F8530AED6D /* CALayer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE1BE7991A7283CA4186073EF9EE432 /* CALayer+Ext.swift */; };
 		38B493199985464B063EB9A7DCADE200 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC1892383F6B9C0AF56395C292FC97E /* UIFont+Ext.swift */; };
@@ -137,6 +138,7 @@
 		1E85BBDBA4CADF80BB4121CD0A52B240 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		1F3396B95494E5C559CA28B126BCA23A /* FunctionalKeyPaths.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FunctionalKeyPaths.swift; path = CS_Common_Utils/Classes/Functional/FunctionalKeyPaths.swift; sourceTree = "<group>"; };
 		20EEDCB5623983CF07271B8AC786A688 /* UINavigationBar+ColorUpdatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+ColorUpdatable.swift"; sourceTree = "<group>"; };
+		244E9442254B4158008AE146 /* TappableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableLabel.swift; sourceTree = "<group>"; };
 		246C81E1254983FA009AD69F /* CustomIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIndicatorView.swift; sourceTree = "<group>"; };
 		2852FC4383BA646B24349ED04D772D8B /* Pods-CS_Common_UI_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CS_Common_UI_Example-Info.plist"; sourceTree = "<group>"; };
 		2BD8843A49BA69427AC4B3688E3B6C68 /* Pods-CS_Common_UI_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CS_Common_UI_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -354,6 +356,14 @@
 			path = CS_Common_Utils;
 			sourceTree = "<group>";
 		};
+		244E9441254B410B008AE146 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				244E9442254B4158008AE146 /* TappableLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
 		2E9E485C59D1D35328A49180E56684EE /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +405,7 @@
 		5817CE0B76EBD59B7166679204D18CF5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				244E9441254B410B008AE146 /* Labels */,
 				2E9E485C59D1D35328A49180E56684EE /* Base */,
 				63D5F7E198BA5EFB656A270FF1247C5A /* Notification */,
 				B12FF7EE25FED98E3B7B83A72AD484C4 /* TextFields */,
@@ -871,6 +882,7 @@
 				771820D9D8DB51BDF3C99818B5289A52 /* PopupNotification.swift in Sources */,
 				DC5EFEC1342C205DCAB83A9936B83765 /* Theme.swift in Sources */,
 				CA6D3D802A7BED9A9C8676D945ED790A /* ThemeUsageExample.swift in Sources */,
+				244E9443254B4158008AE146 /* TappableLabel.swift in Sources */,
 				D3AAD267FF61FD039F63964901C0AD1E /* UIColor+Palette.swift in Sources */,
 				246C81E2254983FA009AD69F /* CustomIndicatorView.swift in Sources */,
 				5E9ADE0FE7398D9637A5742D00BC95D5 /* UILabel+ColorUpdatable.swift in Sources */,
@@ -1135,7 +1147,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.3;
 				MODULEMAP_FILE = "Target Support Files/CS_Common_UI/CS_Common_UI.modulemap";
 				PRODUCT_MODULE_NAME = CS_Common_UI;
 				PRODUCT_NAME = CS_Common_UI;
@@ -1304,7 +1316,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.3;
 				MODULEMAP_FILE = "Target Support Files/CS_Common_UI/CS_Common_UI.modulemap";
 				PRODUCT_MODULE_NAME = CS_Common_UI;
 				PRODUCT_NAME = CS_Common_UI;
