@@ -122,18 +122,18 @@ extension NonEmpty: MutableCollection where Collection: MutableCollection { publ
 
 private func testNonEmpty() {
     
-    NonEmpty<[Int]>(1, [2, 3])
-    NonEmpty<[Int]>(1, [])
-    NonEmpty<Set<Int>>(1, [2, 3])
-    NonEmpty<[Int: String]>((1, "Blob"), [2: "Blob Junior", 3: "Blob Senior"])
+    _ = NonEmpty<[Int]>(1, [2, 3])
+    _ = NonEmpty<[Int]>(1, [])
+    _ = NonEmpty<Set<Int>>(1, [2, 3])
+    _ = NonEmpty<[Int: String]>((1, "Blob"), [2: "Blob Junior", 3: "Blob Senior"])
     
     //RangeReplaceableCollection
-    NonEmpty<[Int]>(1, 2, 3)
+    _ = NonEmpty<[Int]>(1, 2, 3)
     
     let ys = NonEmpty<[Int]>(1, 2, 3)
     ys.forEach { print($0) }
     
-    ys.first + 1
-    ys.last + 1
+    _ = ys.first + 1
+    _ = ys.last + 1
 }
 

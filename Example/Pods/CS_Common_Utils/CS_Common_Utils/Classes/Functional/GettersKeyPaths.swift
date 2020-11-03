@@ -39,23 +39,24 @@ private func testGetKeyPaths() {
     print(user |> idString)
     
     let isStaff = get(\User.isStaff)
+    print(user |> isStaff)
     
     // get all emails
-    users.map(get(\.email))
+    _ = users.map(get(\.email))
     
     // filter who is staff
-    users.filter(get(\.isStaff))
+    _ = users.filter(get(\.isStaff))
     
     // get the email lenght of each user
-    users.map(get(\.email.count))
+    _ = users.map(get(\.email.count))
     
     // filter who is not staff
-    users.filter((!) <<< get(\.isStaff))
+    _ = users.filter((!) <<< get(\.isStaff))
     
     //user.sorted(by: (User, User) throws -> Bool)
     
     // sorting by shortest email - lot of noise
-    users.sorted(by: { $0.email.count < $1.email.count })
+    _ = users.sorted(by: { $0.email.count < $1.email.count })
 }
 
 // we want a better way to sort by properties
@@ -66,14 +67,14 @@ func their<Root, Value>(_ f: @escaping (Root) -> Value, _ g: @escaping (Value, V
 
 func testTheir() {
     
-    users
+    _ = users
         .sorted(by: their(get(\.email), <))
     
     // max and min... but a bit of noise, we have to always give the <
-    users
+    _ = users
         .max(by: their(get(\.email), <))?.email
     
-    users
+    _ = users
         .min(by: their(get(\.email), <))?.email
 }
 
@@ -84,10 +85,10 @@ func their<Root, Value: Comparable>(_ f: @escaping (Root) -> Value) -> (Root, Ro
 }
 
 func testComparableTheir() {
-    users
+    _ = users
         .max(by: their(get(\.email)))?.email
     
-    users
+    _ = users
         .min(by: their(get(\.email)))?.email
 }
 
@@ -112,8 +113,8 @@ let episodes = [
 ]
 
 func testReduce() {
-    episodes
-   .reduce(0) { $0 + $1.viewCount } // short but not clear
+    _ = episodes
+            .reduce(0) { $0 + $1.viewCount } // short but not clear
 }
 
 // we need a combining function
@@ -126,7 +127,7 @@ func combining<Root, Value>(
 }
 
 func testReduceWithCombining() {
-    episodes
+    _ = episodes
         .reduce(0, combining(get(\.viewCount), by: +)) //more readable
 }
 
@@ -138,16 +139,20 @@ public prefix func ^ <Root, Value>(kp: KeyPath<Root, Value>) -> (Root) -> Value 
 }
 
 fileprivate func testOperatorOverload() {
+    let user = User(id: 1, email: "blob@pointfree.co")
+    
     let getId = ^\User.id
-    users.map(^\.id)
-    users.map(^\.email.count)
-    users.map(^\.email.count >>> String.init)
-    users.filter(^\.isStaff)
-    users.filter((!) <<< ^\.isStaff)
-    users.sorted(by: their(^\.email))
-    users.sorted(by: their(^\.email, >))
-    users.max(by: their(^\.email.count))
-    users.min(by: their(^\.email.count))
+    print(user |> getId)
+    
+    _ = users.map(^\.id)
+    _ = users.map(^\.email.count)
+    _ = users.map(^\.email.count >>> String.init)
+    _ = users.filter(^\.isStaff)
+    _ = users.filter((!) <<< ^\.isStaff)
+    _ =  users.sorted(by: their(^\.email))
+    _ = users.sorted(by: their(^\.email, >))
+    _ = users.max(by: their(^\.email.count))
+    _ = users.min(by: their(^\.email.count))
 }
 
 func absurd<A>(_ never: Never) -> A {

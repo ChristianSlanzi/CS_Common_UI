@@ -123,6 +123,9 @@ fileprivate func testTagged() {
 
     // works
     let subscription = subscriptions.first(where: { $0.id == user.subscriptionId })
+    if subscription != nil {
+        
+    }
     
     // doesn't works - Subscription.Id and User.Id are now two different types, even if they are both Int
     // let subscription2 = subscriptions .first(where: { $0.id == user.id })

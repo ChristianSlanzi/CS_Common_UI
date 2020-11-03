@@ -30,9 +30,9 @@ public typealias NonEmptyArray<A> = NonEmpty<[A]>
 
 public func testNonEmptyWithSet() {
     let nonEmptySet = NonEmpty(1, Set([1, 2, 3])) // 1[2, 3]
-    nonEmptySet.count // 3
+    _ = nonEmptySet.count // 3
     
-    NonEmpty<Set<Int>>(1, 1, 2, 3) // 1[2, 3]
+    _ = NonEmpty<Set<Int>>(1, 1, 2, 3) // 1[2, 3]
     
-    NonEmptySet(1, 1, 2, 3) // 1[2, 3]
+    _ = NonEmptySet(1, 1, 2, 3) // 1[2, 3]
 }

@@ -37,10 +37,10 @@ func testWrapView() {
     // contravariance - it works with everything derived from UIView
     // when you have a function you are allowed to inject any subtype of input tyoe
     
-    let wrapAnUIView = wrapView(padding: padding) as (UIView) -> UIView
-    let wrapAnUIButton = wrapView(padding: padding) as (UIButton) -> UIView
-    let wrapAnUISwitch = wrapView(padding: padding) as (UISwitch) -> UIView
-    let wrapAnUIStackView = wrapView(padding: padding) as (UIStackView) -> UIView
+    //let wrapAnUIView = wrapView(padding: padding) as (UIView) -> UIView
+    //let wrapAnUIButton = wrapView(padding: padding) as (UIButton) -> UIView
+    //let wrapAnUISwitch = wrapView(padding: padding) as (UISwitch) -> UIView
+    //let wrapAnUIStackView = wrapView(padding: padding) as (UIStackView) -> UIView
     
     // covariance
 }
@@ -90,11 +90,15 @@ func testPredicateSet() {
     let allInts = PredicateSet<Int> { _ in true }
     let longStrings = PredicateSet<String> { $0.count > 100 }
     
+    print(allInts.contains(3)) // true
+    print(longStrings.contains("short")) // false
+    
     // a set can be iterable. a predicate set not.
     xs.forEach { print($0) }
     
     // a set cannot be inverted, a predicate set can do that.
     let allIntsNot1234 = PredicateSet { !ys.contains($0) }
+    print(allIntsNot1234.contains(3)) // false
     
     // a set can conforms to hashable and equatable. a predicate set not.
     
@@ -105,7 +109,7 @@ func testPredicateSet() {
     let evens = PredicateSet { $0 % 2 == 0 }
     let odds = evens.contramap{ $0 + 1 }
     
-    odds.contains(3) // true
+    print(odds.contains(3)) // true
  
     let isLessThan10 = PredicateSet { $0 < 10 }
     
@@ -115,11 +119,18 @@ func testPredicateSet() {
     }
     
     let userIdLessThan10 = isLessThan10.contramap(^\User.id)   // a new predicate on User id
+    print(userIdLessThan10.contains(User.init(id: 100, name: "Blob"))) //false
+    
     let userNameCountLessThan10 = isLessThan10.contramap(^\User.name.count) //all users with name count less than 10
+    print(userNameCountLessThan10.contains(User.init(id: 100, name: "Blob"))) //true
+    
     let isBlobContained = isLessThan10.contramap(^\User.id).contains(User.init(id: 100, name: "Blob")) // false because id is 100
+    print(isBlobContained)
+    
     let isBlob2Contained = isLessThan10
                             .contramap(^\User.name.count)
                             .contains(User.init(id: 100, name: "Blob")) // true because name less than 10
+    print(isBlob2Contained)
 }
 
 

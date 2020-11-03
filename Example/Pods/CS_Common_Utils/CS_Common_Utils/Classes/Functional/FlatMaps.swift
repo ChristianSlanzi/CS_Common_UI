@@ -21,11 +21,11 @@ private func testFlatMap() {
     8,9,4
     """
     
-    csv
+    _ = csv
         .split(separator: "\n")
         .map { $0.split(separator: ",") } // returns an array of arrays
     
-    csv
+    _ = csv
         .split(separator: "\n")
         .flatMap { $0.split(separator: ",") } // returns a flattened array with all elements.
 }
@@ -47,11 +47,12 @@ func testFlatMapOptionals() {
     let _: Int? = String.init(data: Data([55]), encoding: .utf8)
         .flatMap(Int.init) // now it returns an Optional Int because we had some data to flatten.
     
-    ["1", "2", "buckle", "my", "shoe"]
+    _ = ["1", "2", "buckle", "my", "shoe"]
         .map(Int.init)    // returns [1,2,nil,nil,nil]
     
-    ["1", "2", "buckle", "my", "shoe"]
-        .flatMap(Int.init)    // returns [1,2]
+    _ = ["1", "2", "buckle", "my", "shoe"]
+        .compactMap(Int.init)    // returns [1,2]
+        //flatMap when closure returns optional value is deprecated - we use compactMap instead of it
     
     // so we have flatmap with 2 different behaviours.
     
@@ -62,10 +63,11 @@ func testFlatMapOptionals() {
     8,9,4
     """
     
-    csv
+    _ = csv
         .split(separator: "\n") // returns an array of strings
         .flatMap { $0.split(separator: ",") } // returns a flattened array of strings
-        .flatMap { Int($0) } // returns an array with only the elements that get converted into integer
+        .compactMap { Int($0) } // returns an array with only the elements that get converted into integer
+        //flatMap when closure returns optional value is deprecated - we use compactMap instead of it
         .reduce(0, +) // returns the sum
     
     // the 2 flatmaps above behave differently

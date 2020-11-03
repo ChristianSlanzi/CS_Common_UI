@@ -22,3 +22,10 @@ public extension UIStackView {
      self.alignment = .fill
   }
 }
+
+public extension UIStackView {
+    /// Add an array of subviews to a SuperView
+    func addArrangedSubviews(_ views: UIView...) {
+        for view in views { addArrangedSubview(view) }
+    }
+}
