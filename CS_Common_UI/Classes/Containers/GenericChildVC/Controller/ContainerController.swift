@@ -12,15 +12,28 @@ public struct ContainerControllerModel {
     var navigationItemTitle: String
     var collectionRowHeight: CGFloat
     var tableRowHeight: CGFloat
+    
+    //TODO create a section header model
     var sectionTitles: [String]
     var sectionTitleHexColor: String //#ffffff
+    var sectionMoreButtonTitles: [String]
+    var sectionMoreButtonTitleHexColor: String //#ffffff
     
-    public init(navigationItemTitle: String, collectionRowHeight: CGFloat, tableRowHeight: CGFloat, sectionTitles: [String], sectionTitleHexColor: String) {
+    public init(navigationItemTitle: String,
+                collectionRowHeight: CGFloat,
+                tableRowHeight: CGFloat,
+                sectionTitles: [String],
+                sectionTitleHexColor: String,
+                sectionMoreButtonTitles: [String],
+                sectionMoreButtonTitleHexColor: String
+                ) {
         self.navigationItemTitle = navigationItemTitle
         self.collectionRowHeight = collectionRowHeight
         self.tableRowHeight = tableRowHeight
         self.sectionTitles = sectionTitles
         self.sectionTitleHexColor = sectionTitleHexColor
+        self.sectionMoreButtonTitles = sectionMoreButtonTitles
+        self.sectionMoreButtonTitleHexColor = sectionMoreButtonTitleHexColor
     }
 }
 
@@ -91,21 +104,25 @@ where Cell: ConfigurableCell, Cell: CoordinatedCell, Cell.T == T, UCell: Configu
         switch section {
         case 0:
             view.title.text = containerControllerModel.sectionTitles[section]
-            view.title.textColor = UIColor(hexString: containerControllerModel.sectionTitleHexColor)//"#626363")
+            view.title.textColor = UIColor(hexString: containerControllerModel.sectionTitleHexColor)
             //view.image.image = UIImage(named: sectionImages[section])
             view.more.isHidden = true
         case 1:
             view.title.text = containerControllerModel.sectionTitles[section]
             //view.image.image = UIImage(named: sectionImages[section])
-            view.title.textColor = UIColor(hexString: "#626363")
-            view.more.setTitle("See all", for: .normal)
-            view.more.setTitleColor( UIColor(hexFromString: "#3EC7E6"), for: .normal)
+            view.title.textColor = UIColor(hexString: containerControllerModel.sectionTitleHexColor)
+            view.more.setTitle(containerControllerModel.sectionMoreButtonTitles[section], for: .normal)
+            view.more.setTitleColor( UIColor(hexString: containerControllerModel.sectionMoreButtonTitleHexColor), for: .normal)
             view.more.sizeToFit()
         default:
             break
         }
         
         return view
+    }
+    
+    public override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
     }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
