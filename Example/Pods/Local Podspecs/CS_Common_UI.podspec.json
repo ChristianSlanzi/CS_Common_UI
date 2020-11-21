@@ -1,6 +1,6 @@
 {
   "name": "CS_Common_UI",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "summary": "CS_Common_UI is a collection of ui components",
   "description": "CS_Common_UI is a collection of common ui base components and generics ui helpers to facilitate and speedup the development of an iOS Application",
   "homepage": "https://github.com/ChristianSlanzi/CS_Common_UI",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/ChristianSlanzi/CS_Common_UI.git",
-    "tag": "0.1.4"
+    "tag": "0.1.5"
   },
   "platforms": {
     "ios": "13.0"

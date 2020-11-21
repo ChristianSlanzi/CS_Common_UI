@@ -34,3 +34,37 @@ public extension UIViewController {
     }
 
 }
+
+// HIDE KEYBOARD WHEN TAPPED AROUND
+extension UIViewController {
+    public func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+// GET TOP MOST VIEWCONTROLLER
+public extension UIViewController {
+    func getTopMostViewController() -> UIViewController? {
+        var topMostViewController = UIApplication.shared.keyWindow?.rootViewController
+
+        while let presentedViewController = topMostViewController?.presentedViewController {
+            topMostViewController = presentedViewController
+        }
+
+        return topMostViewController
+    }
+}
+
+// GET THE APPDELEGATE INSTANCE
+public extension UIViewController {
+    func appDelegate() -> UIApplicationDelegate {
+        let delegate = UIApplication.shared.delegate
+        return delegate!
+    }
+}
